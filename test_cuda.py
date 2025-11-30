@@ -1,9 +1,9 @@
 import torch
 import sys
 
-print("=" * 100)
+print("=" * 50)
 print("PyTorch 和 CUDA 测试")
-print("=" * 100)
+print("=" * 50)
 
 print(f"Python版本: {sys.version}")
 print(f"PyTorch版本: {torch.__version__}")
