@@ -14,7 +14,6 @@ class TransformerBlock(nn.Module):
     3. 残差连接和层归一化 (Residual Connection + LayerNorm)
     4. Dropout正则化
     """
-
     def __init__(self, embed_size, heads, dropout, forward_expansion):
         """
         参数说明：
