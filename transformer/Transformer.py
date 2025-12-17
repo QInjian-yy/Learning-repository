@@ -4,7 +4,6 @@ from torch import nn
 from transformer.Decoder import Decoder
 from transformer.Encoder import Encoder
 
-
 class Transformer(nn.Module):
     """
     完整的Transformer模型（编码器-解码器架构）
