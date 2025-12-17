@@ -125,7 +125,6 @@ class Transformer(nn.Module):
 
         # 使用简单的因果掩码（原代码）或包含padding的掩码
         trg_mask = self.make_trg_mask(trg)  # 目标序列因果掩码
-        # 或者使用：trg_mask = self.make_trg_mask_with_padding(trg)
 
         # 2. 编码器前向传播
         # enc_src: [batch_size, src_len, embed_size]
@@ -179,8 +178,8 @@ if __name__ == "__main__":
 
     # 5. 前向传播 - 关键：训练时的教师强制(teacher forcing)
     # trg[:, :-1] = 去掉最后一个token
-    # 输入: [<sos>, 7, 4, 3, 5, 9]
-    # 预测: [7, 4, 3, 5, 9, <eos>]
+    # 输入: [<sos>, 7, 4, 3, 5, 9, <eos>]
+    # 预测: [7, 4, 3, 5, 9, <eos>, <pad>]
     out = model(x, trg[:, :-1])
 
     # 6. 输出形状解释
